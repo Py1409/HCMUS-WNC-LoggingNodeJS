@@ -1,0 +1,5 @@
+info: Oct-12-2022 16:04:49: 	OK - /api/films - GET - ::1
+info: Oct-12-2022 16:07:17: 	OK - /api/films/101 - GET - ::1
+error: Oct-12-2022 16:07:50: 	500 - undefined - id is not defined - /api/films/101 - GET - ::1
+info: Oct-12-2022 16:13:41: 	OK - /api/films/ - GET - ::1
+info: Oct-12-2022 16:20:15: 	OK - /api/actors - GET - ::1
