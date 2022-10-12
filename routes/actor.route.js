@@ -1,5 +1,5 @@
 import express from 'express';
-import {logError, logInfo} from '../logs/log.js';
+import {logError, logInfo} from '../utils/log.js';
 
 import actorModel from '../models/actor.model.js';
 

@@ -1,5 +1,5 @@
 import express from 'express';
-import {logError, logInfo} from '../logs/log.js';
+import {logError, logInfo} from '../utils/log.js';
 import { readFile } from 'fs/promises';
 
 import filmModel from '../models/film.model.js';

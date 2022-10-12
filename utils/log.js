@@ -12,9 +12,9 @@ transports:
 });
 
 export const logError = (err, req, res) =>{
-    log.error(`Code: ${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+    log.error(`${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip} - req.body: ${JSON.stringify(req.body)}`);
 }
 
 export const logInfo = (req, res) =>{
-    log.info(`${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+    log.info(`${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip} - req.body: ${JSON.stringify(req.body)}`);
 }
