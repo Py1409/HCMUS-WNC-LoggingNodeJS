@@ -1,5 +1,6 @@
 import express from 'express';
 import {logError, logInfo} from '../utils/log.js';
+import {stackifyError, stackifyInfo} from '../utils/stackify-log.js';
 import { readFile } from 'fs/promises';
 
 import filmModel from '../models/film.model.js';
@@ -13,9 +14,11 @@ router.get('/', async function (req, res) {
     const list = await filmModel.findAll();
     res.json(list);
     logInfo(req, res);
+    stackifyInfo(req, res);
 
   } catch (error) {
     logError(error, req, res);
+    stackifyError(error, req, res);
   }
   
 })
@@ -29,9 +32,11 @@ router.get('/:id', async function (req, res) {
     }
     res.json(film);
     logInfo(req, res);
+    stackifyInfo(req, res);
 
   } catch (error) {
     logError(error, req, res);
+    stackifyError(error, req, res);
   }
 })
 
@@ -46,9 +51,11 @@ router.post('/', validate(schema), async function (req, res) {
     }
     res.status(201).json(film);
     logInfo(req, res);
+    stackifyInfo(req, res);
 
   } catch (error) {
     logError(error, req, res);
+    stackifyError(error, req, res);
   }
 })
 
@@ -60,9 +67,11 @@ router.delete('/:id', async function (req, res) {
       affected: n
     });
     logInfo(req, res);
+    stackifyInfo(req, res);
 
   } catch (error) {
     logError(error, req, res);
+    stackifyError(error, req, res);
   }
   
 })
@@ -76,9 +85,11 @@ router.patch('/:id', validate(schema), async function (req, res) {
       affected: n
     });
     logInfo(req, res);
+    stackifyInfo(req, res);
 
   } catch (error) {
     logError(error, req, res);
+    stackifyError(error, req, res);
   }
 })
 
